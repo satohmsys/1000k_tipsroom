@@ -1,0 +1,192 @@
+/************************
+
+// post
+
+************************/
+
+
+/****************************************
+
+// module
+
+************************************************/
+
+
+
+
+/****************************************
+
+// style
+
+************************************************/
+
+
+.postTitle{
+	color: #fff;
+	font-weight: bold;
+
+	
+	&__index{
+		letter-spacing: 0.05em;
+		margin-top: 60px;
+		margin-bottom: 40px;
+		line-height: 1.45;
+		font-size: 2.4rem;
+		text-shadow: 0px 4.5px 5px rgba( $navy, 0.4 );
+		
+	}
+}
+
+
+
+///////// 記事本文
+.article{
+	letter-spacing: 0.05em;
+	margin-bottom: 40px;
+	padding: 25px 30px;
+	border-radius: 2px;
+	background-color: #fff;
+	
+	p:first-child{
+		margin-top: 0;
+	}
+	p:last-child{
+		margin-bottom: 0;
+	}
+
+
+	///// index
+	h1{
+		margin-top: 1.5em;
+		margin-bottom: 0.65em;
+		font-weight: bold;
+		font-size: 2.4rem;
+	}
+	h2{
+		margin-top: 1.5em;
+		margin-bottom: 0.65em;
+		font-weight: bold;
+		font-size: 2rem;
+	}
+	h3{
+		margin-top: 1.5em;
+		margin-bottom: 0.65em;
+		font-weight: bold;
+		font-size: 1.6rem;
+	}
+	h4{
+		margin-top: 1.5em;
+		margin-bottom: 0.65em;
+		font-weight: bold;
+		font-size: 1.4rem;
+	}
+	h5{
+		margin-top: 1.5em;
+		margin-bottom: 0.65em;
+		font-weight: bold;
+		font-weight: bold;
+	}
+
+
+	///button
+	.button{
+		width: 100%;
+	}
+	.button.-primary{
+		margin-top: 1em;
+		margin-bottom: 1em;
+	}
+
+
+	////sns
+	&__sns{
+		margin-top: 35px;
+		text-align: center;
+		li{
+			display: inline-block;
+			
+			&:not( :last-child ){
+				margin-right: 10px;
+			}
+		}
+
+		li>a{
+			color: #fff;
+		}
+		li>a:before{
+			font-size: 1em;
+			width: 30px;
+			height: 30px;
+			text-align: center;
+			line-height: 30px;
+			border-radius: 30px;
+			background-color: $basefontColor;
+		}
+	}
+
+
+	//// back to toppage
+	&__back{
+		margin-top: 40px;
+	}
+
+}
+
+
+.code_ray_wrap{
+	margin-top: 1em;
+	margin-right: -30px;
+	margin-bottom: 1em;
+	margin-left: -30px;
+	overflow-x: scroll;
+}
+.CodeRay{
+	border: none;
+	border-collapse: collapse;
+	border-spacing: 0;
+
+	background-color: #f7fefe;
+
+	.line-numbers{
+		padding-left: 1em;
+		padding-right: 1em;
+		background-color: #daebfa;
+		color: #999;
+	}
+
+	.code{
+		width: 100%;
+	}
+
+	td{
+	    padding: 1em 0.5em;
+	    vertical-align: top;	
+	    	
+	}
+
+}
+
+
+
+.ad{
+	line-height: 1;
+	margin-bottom: 40px;
+	padding-right: 20px;
+	padding-left: 20px;
+	
+	a{
+		display: block;
+	}
+}
+
+
+
+.relatedPosts{
+	&__index{
+		margin-bottom: 1em;
+		color: #fff;
+		font-weight: bold;
+		font-size: 2rem;
+		letter-spacing: 0.05em;
+	}
+}

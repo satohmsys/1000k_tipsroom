@@ -19,7 +19,6 @@ html{
 .bodyContent{
 	position: relative;
 	z-index: 1;
-	min-height: calc( 100vh - 7rem );
 }
 
 .siteBg{
@@ -40,12 +39,6 @@ html{
 
 
 
-//////// footer fixed setting
-
-.siteFooter{
-	height: 5rem;
-}
-
 
 
 
@@ -58,8 +51,20 @@ html{
 /////// ヘッダー ラッパー
 .siteHeader
 {
+	width: 100%;
+	position: fixed;
+	z-index: 10;
+	top: 0;
+	right: 0;
+	left: 0;
+	padding-top: 10px;
 	line-height: 1;
 	text-align: center;
+	
+
+	&__logo img{
+		max-width: 100px;
+	}
 
 }
 
@@ -74,6 +79,8 @@ html{
 
 .siteFooter
 {
+	margin-top: 60px;
+	padding-bottom: 30px;
 	line-height: 1;
 	color: #fff;
 	
@@ -179,7 +186,7 @@ $margin: 20 / 690;
 		display: block;
 		border-radius: 3px;
 		background-color: #fff;
-		box-shadow: 0px 4.5px 5px rgba( #003b83, 0.4 );
+		box-shadow: 0px 4.5px 5px rgba( $navy, 0.4 );
 		
 		@include break( sp, min ){
 			padding-top: 30px;
@@ -240,4 +247,51 @@ $margin: 20 / 690;
 		display: none;
 	}
 
+}
+
+
+
+
+
+////////////////////
+
+// button
+
+////////////////////
+
+.button{
+	display: inline-block;
+	
+	&.-primary a{
+		background-color: $pink;
+	}
+	&.-secondary a{
+		background-color: $basefontColor;
+	}
+
+	a{
+		padding: 1em 2em 1em 1em;
+		display: block;
+		position: relative;
+		border-radius: 3px;
+		text-align: center;
+		color: #fff;
+		
+		@include iconfont(
+			$content: '\f101',
+			$dir: right
+		);
+		
+		&:after{
+			height: 1em;
+			margin-top: auto;
+			margin-bottom: auto;
+			position: absolute;
+			top: 0;
+			right: 10px;
+			bottom: 0;
+			
+		}
+
+	}
 }

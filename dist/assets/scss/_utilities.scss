@@ -147,3 +147,20 @@
 		$font-size: 22px
 	 );
 }
+.icon-pocket{
+	@include iconfont(
+		$content: '\f265',
+		$icon-margin-right: 0, 			
+		$top : 0, 
+		$font-size: 22px
+	 );
+}
+.icon-hatena{
+	&:before{
+		content: "B!";
+		font-size: 22px;
+		line-height: 1;
+		display: inline-block;
+		font-weight: bold;
+	}
+}
