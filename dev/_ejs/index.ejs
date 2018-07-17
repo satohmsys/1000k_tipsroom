@@ -1,0 +1,102 @@
+<% 
+	include( '_include/_function.ejs' );
+	$path = './';
+	$active = 'top';
+
+	var isTop =  true;
+%>
+<!DOCTYPE html>
+<html>
+<head>
+	<%- include( '_include/head.ejs' ); %>
+</head>
+<body class="home">
+	<%- include( '_include/header.ejs', { isTop: true } ); %>
+
+	<main class="mainContent">
+		<div class="wrap">
+			<ul class="panels">
+				<li class="panel">
+					<a class="panel__wrap" href="">
+						<h2 class="panel__index">
+							要素からclassの追加/削除を行う
+						</h2>
+					</a>
+				</li>
+				<li class="panel">
+					<a class="panel__wrap" href="">
+						<h2 class="panel__index">
+							動的に追加した要素に対してイベントリスナーを設定する
+						</h2>
+					</a>
+				</li>
+				<li class="panel">
+					<a class="panel__wrap" href="">
+						<h2 class="panel__index">
+							要素からclassの追加/削除を行う
+						</h2>
+					</a>
+				</li>
+				<li class="panel">
+					<a class="panel__wrap" href="">
+						<h2 class="panel__index">
+							動的に追加した要素に対してイベントリスナーを設定する
+						</h2>
+					</a>
+				</li>
+				<li class="panel">
+					<a class="panel__wrap" href="">
+						<h2 class="panel__index">
+							要素からclassの追加/削除を行う
+						</h2>
+					</a>
+				</li>
+				<li class="panel">
+					<a class="panel__wrap" href="">
+						<h2 class="panel__index">
+							動的に追加した要素に対してイベントリスナーを設定する
+						</h2>
+					</a>
+				</li>
+				<li class="panel">
+					<a class="panel__wrap" href="">
+						<h2 class="panel__index">
+							要素からclassの追加/削除を行う
+						</h2>
+					</a>
+				</li>
+				<li class="panel">
+					<a class="panel__wrap" href="">
+						<h2 class="panel__index">
+							動的に追加した要素に対してイベントリスナーを設定する
+						</h2>
+					</a>
+				</li>
+				<li class="panel">
+					<a class="panel__wrap" href="">
+						<h2 class="panel__index">
+							要素からclassの追加/削除を行う
+						</h2>
+					</a>
+				</li>
+				<li class="panel -ad">
+					<a class="panel__wrap" href="">
+						<h2 class="panel__index">
+							やばい広告やばい広告やばい広告やばい広告やばい広告
+						</h2>
+						<ul class="panel__tags">
+							<li>Array</li>
+							<li>Array</li>
+						</ul>
+					</a>
+				</li>																			
+			</ul>
+		</div>
+	</main>
+
+	<%- include( '_include/footer.ejs' ); %>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>	
+
+	<script src="/assets/js/common.js"></script>
+</body>
+</html>

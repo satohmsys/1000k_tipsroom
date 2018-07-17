@@ -1,0 +1,119 @@
+//////////////////////////////////////////
+
+//valiables
+
+//include by style.scss
+
+//////////////////////////////////////////
+
+%gradation{
+	// @include background-image( linear-gradient( to right, $blue, $green ) );	
+}
+
+
+//////////
+
+// path
+
+//////////
+
+// $img : "img";
+// $js : "js";
+// $icon : "#{$fonts}/icomoon/fonts";
+
+
+
+//////////
+
+// fonts
+
+//////////
+
+$fontFamily :"ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "Yu Gothic", YuGothic, "メイリオ", Meiryo, sans-serif;
+// $fontFamily : "Yu Mincho", "YuMincho", "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
+
+$basefontColor : $basefontColor;
+$basefontSize : 10px;
+$baselineHeight : 1.75;
+$mobileFontsize : 0.6;
+
+//silver ratio
+$xxlarge : 2em;
+$xlarge : #{ 32px/$basefontSize}rem;
+$xlarge_sp : #{ 41px/$basefontSize}rem;
+;
+$large : #{ 18px/$basefontSize}rem;
+$large_sp : #{ 22px/$basefontSize}rem;
+;
+$small : 0.875em;
+$xsmall: 0.75em;
+
+
+
+//////////////////////
+
+// layouts 
+
+/////////////////////
+
+//column
+$innerWidth: 1200px;
+$outerWidth:1440px;
+
+//margin / padding
+$sSpace : 1rem;
+$mSpace : 2.5rem;
+$lSpace : 4rem;
+$xlSpace : 6rem;
+
+$navHeight : 150px;
+$navHeightSp : 55px;
+
+
+
+//////////////////////
+
+// property
+
+/////////////////////
+
+$radius: 5px;
+
+
+//////////////////////
+
+// responsive 
+
+/////////////////////
+
+////////breakpoint
+// $bpSmp : 480px;
+$bpSmp : 414px;
+$bpTab : 780px;
+$bpPc : 1366px;
+
+
+/////
+// 高さを計算する（概算値
+// $height
+//
+@function heightCalc( $mediaType, $height, $rate: 1.78 ){
+	@if ($mediaType == pc ){
+		@return floor($height / $rate);	
+	} @else {
+		@return floor($height * $rate);	
+	}
+}
+
+$bpSmpMax-width : "max-width : #{$bpSmp}";
+$bpSmpMin-width : "min-width : #{$bpSmp}";
+$bpTabMax-width : "max-width : #{$bpTab}";
+$bpTabMin-width : "min-width : #{$bpTab}";
+$bpPcMax-width: "max-width : #{$bpPc}";
+$bpPcMin-width: "min-width : #{$bpPc}";
+
+$bpSmpMax-height : "max-height :" + heightCalc(sp, $bpSmp);
+$bpSmpMin-height : "min-height :" + heightCalc(sp, $bpSmp);
+$bpTabMax-height : "max-height :" + heightCalc(tabl, $bpTab);
+$bpTabMin-height : "min-height :" + heightCalc(tabl, $bpTab);
+$bpPcMax-height: "max-height :" + heightCalc( pc, $bpPc);

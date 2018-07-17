@@ -1,0 +1,149 @@
+@charset "UTF-8";
+//////////////////////////////////////////
+
+//utilitie classes
+
+//include by style.scss
+
+//////////////////////////////////////////
+
+
+//////////////////
+
+// block level
+
+//////////////////
+
+%inner{
+	max-width: $innerWidth;
+	margin-left: auto;
+	margin-right: auto;
+	box-sizing: border-box;
+}
+
+.wrap{
+	width: 92%;
+	margin-left: auto;
+	margin-right: auto;	
+	// box-sizing: border-box;
+	
+	@include break( sp, min ){
+		max-width: 1366px;
+	}
+}
+
+.contain{
+	@extend %inner;
+}
+
+.inner{
+	@extend %inner;
+}
+
+
+.clearfix{
+	@include clearfix();
+}
+
+
+
+//////////////////
+
+// responsive
+
+//////////////////
+
+
+////////スマホで非表示
+
+.only-sp{
+	display: none!important;
+}
+@include break( sp ){
+	.no-sp{
+		display: none!important;	
+	}
+	.only-sp{
+		display: inherit!important;
+	}
+} //max 580
+
+.only-tab{
+	display: none!important;
+}
+@include break( tab ){
+	.no-tab{
+		display: none!important;	
+	}
+	.only-tab{
+		display: inherit!important;
+	}
+} //max 780
+
+
+
+
+
+
+//////////////////
+
+// status
+
+//////////////////
+
+.-notActive{
+	pointer-events:none;
+}
+
+// .active{
+// 	font-weight: bold;
+// }
+
+.js-effect{
+	transition: transition( );
+}
+
+
+//////////////////
+
+// typography
+
+//////////////////
+
+.xxlarge{ font-size: $xxlarge;}
+.xlarge{ font-size: $xlarge;}
+.large{ font-size: $large;}
+.small{ font-size: $small; }
+
+
+
+//////////////////
+
+// icon
+
+//////////////////
+
+.icon-twitter{
+	@include iconfont(
+		$content: '\f099',
+		$icon-margin-right: 0, 
+		$top : 0, 
+		$font-size: 22px
+	 );
+}
+.icon-facebook{
+	@include iconfont(
+		$content: '\f09a',
+		$icon-margin-right: 0, 			
+		$top : 0, 
+		$font-size: 22px
+	 );
+}
+.icon-instagram{
+	@include iconfont(
+		$content: '\f16d',
+		$icon-margin-right: 0, 			
+		$top : 0, 
+		$font-size: 22px
+	 );
+}

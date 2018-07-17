@@ -1,0 +1,26 @@
+	
+		<div class="bodyContent">
+		<% if(! isTop ) { %>
+		<header class="siteHeader">
+			<div class="wrap">
+				<h1 class="siteHeader__logo">
+					<a href="/">
+						<img src="<%- $path %>assets/img/logo.svg" width="220" alt="Tips_room.js">
+					</a>
+				</h1>
+			</div>
+		</header>
+		<% } else { %>
+		<section class="mv">
+			<div class="wrap">
+				<p class="mv__logo">
+					<img src="<%- $path %>/assets/img/logo.svg" width="220" alt="">
+				</p>
+				<h1 class="mv__copy">
+					「あの処理JavaScriptで書く時どうするんだっけ？」<br>
+					を解決するJavaScriptのtips集
+				</h1>
+			</div>
+		</section>
+		<% } %>
+		
