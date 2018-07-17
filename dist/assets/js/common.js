@@ -1,8 +1,7 @@
 
 var $w = $( window ),
-	$body = $( 'body' ),
+	$bg = $( '.siteBg' ),
 	$jsEffect = $('.js-effect'),
-	$flag = true,
 	$scrollVal = 0,
 	$scrollValBottom = 0;
 
@@ -13,40 +12,27 @@ function getScrollVal( callback ){
 		var $scrollVal = $w.scrollTop();
 			callback( $scrollVal);
 	})
-} 
+}
 
 
 
 /**
-* loading anim
+* device
 */
 
-$w.on( 'load', function() {
-	$body.addClass( '-is-rendered')
+window.addEventListener("deviceorientation", function(e){
+
+	var x = Math.round( e.gamma || 0 ) * 0.25,
+			y = Math.round( e.beta || 0 ) * 0.25,
+			z = Math.round( e.alpha || 0 ) * 0.3;
+
+			$( 'body' ).append( x )
+
+		$bg.css({
+			'transform': 'translate3d(' + x + 'px ' + y + 'px ' + z + 'px )'
+		})
+
 });
-$( '#logo' ).on( 'transitionend', function( e ){
-	e.stopPropagation();
-	$body.addClass( '-is-loaded' );		
-	
-	$( '.loadingAnim' ).on( 'transitionend', function( e ){
-		$( this ).remove()
-	});
-});
-
-// $w.on( 'load', function() {
-// 	$body.addClass( '-is-rendered')
-// });
-// setTimeout( function(){
-// 	$body.addClass( '-is-loaded' );		
-// }, 1900 );
-// $( '#logo' ).on( 'transitionend', function( e ){
-// 	e.stopPropagation();
-// });
-// $( '.loadingAnim' ).on( 'transitionend', function( e ){
-// 	$( this ).remove()
-// });
-
-
 
 
 /**
@@ -67,7 +53,7 @@ $w.on( 'scroll load', function() {
 			if( $target.offset().top < $scrollBottom - 90 ) {
 				$target.addClass( '-on' );
 			}
-		});				
+		});
 	}
 
 	/**
@@ -77,26 +63,6 @@ $w.on( 'scroll load', function() {
 	1000 < $scrollVal ? $( 'body' ).addClass( '-is-scrolling' ) : $( 'body' ).removeClass( '-is-scrolling' ) ;
 	// 1000 < $scrollVal ? $( '.backtotop' ).fadeIn( 'slow' ) : $( '.backtotop' ).fadeOut( 'slow' ) ;
 } );
-
-
-
-/**
-* Navigation
-*/
-
-var $navToggle = $( '.siteHeader__toggle' );
-
-$navToggle.on( 'click', function(){
-	$( 'body' ).toggleClass( '-is-navOpen' );
-
-	if( $('body').hasClass('-is-navOpen') ){
-		$w.on( 'touchmove.noscroll', function( e ){
-			e.preventDefault()
-		})	
-	} else {
-		$w.off( '.noscroll' );
-	}
-});
 
 
 
@@ -112,7 +78,7 @@ $('a[href^="#"]').click(function( e ){
     	href= $(this).attr("href"),
     	target = $(href == "#" || href == "" ? 'html' : href),
     	position = target.offset().top - $('.siteHeader__logo').height() * 1.5;
-    
+
     $("html, body").animate({scrollTop:position}, speed, "swing");
     return false;
 });
@@ -123,8 +89,7 @@ $('.backtotop').click(function( e ){
 
     var speed = 500,
     	position = 0;
-    
+
     $("html, body").animate({scrollTop:position}, speed, "swing");
     return false;
 });
-

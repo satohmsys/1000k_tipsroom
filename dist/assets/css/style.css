@@ -6,7 +6,7 @@
     font-weight: normal; 
     font-style: normal;
 
-    src: url('../fonts/solid/fontoopsolid-regular.woff') format('woff'), url('../fonts/solid/fontoopsolid-regular.otf') format('truetype');
+    src: url('../fonts/solid/fontoposolid-regular.woff') format('woff'), url('../fonts/solid/fontoposolid-regular.otf') format('truetype');
 }
 @keyframes navrollup
 {
@@ -88,8 +88,6 @@ html
     font-family: 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'Yu Gothic', YuGothic, 'メイリオ', Meiryo, sans-serif;
     font-size: 10px;
     line-height: 1.75;
-
-    min-height: 100vh;
 
     color: #2a2a2a; 
 
@@ -459,12 +457,19 @@ html.ie8 .icon-pocket:before
     content: 'B!';
 }
 
-html
+body
 {
     position: relative;
 
     background: linear-gradient(to bottom right, #1845f0, #2720bb); 
     background-color: #1845f0;
+}
+@media screen and (min-width: 414px)
+{
+    body
+    {
+        min-height: 100vh;
+    }
 }
 
 .bodyContent
@@ -476,6 +481,7 @@ html
 .siteBg
 {
     position: fixed;
+    z-index: -1;
     top: 0;
     right: 0;
     bottom: 0;
@@ -493,6 +499,17 @@ html
 
     mix-blend-mode: overlay;
 }
+@media screen and (min-width: 1024px)
+{
+    .siteBg
+    {
+        width: 100%;
+        padding-top: 100%;
+
+        opacity: .1; 
+        background-image: url(../img/bg-pc.png);
+    }
+}
 
 .siteHeader
 {
@@ -506,12 +523,19 @@ html
 
     width: 100%;
     padding-top: 10px;
+    padding-bottom: 10px;
 
+    transition: all .3s cubic-bezier(.785, .135, .15, .86) 0s; 
     text-align: center;
 }
 .siteHeader__logo img
 {
     max-width: 100px;
+}
+
+.-is-scrolling .siteHeader
+{
+    background-color: #1845f0;
 }
 
 .siteFooter
@@ -541,7 +565,7 @@ html
 }
 .siteFooter__copy
 {
-    font-family: 'fontoposolid-regular', monoscape;
+    font-family: fontoposolid-regular, sans-serif;
     font-size: 1rem;
 }
 @media screen and (min-width: 414px)
@@ -615,7 +639,7 @@ html
     box-sizing: border-box;
     width: 100%;
     padding-top: 10px;
-    padding-right: 30px;
+    padding-right: 20px;
     padding-bottom: 10px;
     padding-left: 10px;
 
@@ -629,6 +653,7 @@ html
     .panel .panel__wrap
     {
         padding-top: 30px;
+        padding-right: 30px;
         padding-bottom: 30px;
         padding-left: 20px;
     }
@@ -849,8 +874,8 @@ html.ie8 .button a:after
 ************************************************/
 .mv
 {
-    margin-top: 45px;
-    margin-bottom: 35px;
+    padding-top: 45px;
+    padding-bottom: 35px;
 
     text-align: center;
 

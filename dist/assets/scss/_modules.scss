@@ -10,10 +10,15 @@
 
 
 //////// background setting
-html{
+body{
 	position: relative;
 	background-color: $blue;
 	background: linear-gradient( to bottom right, $blue, #2720bb );
+
+	@include break( sp,min ){
+		min-height: 100vh;
+		// overflow: hidden;
+	}
 }
 
 .bodyContent{
@@ -27,6 +32,7 @@ html{
 	margin: auto;
 	padding-top: percentage( 1145 / 840);
 	position: fixed;
+	z-index: -1;
 	top: 0;
 	right: 0;
 	bottom: 0;
@@ -35,6 +41,15 @@ html{
 	opacity: 0.35;
 	background: url( ../img/bg.png) top center repeat-y;
 	background-size: 100% auto;
+
+	@include break( 1024, min ){
+		width: 100%;
+		padding-top: 100%;
+		background-image: url( ../img/bg-pc.png );
+		opacity: 0.1;
+	}
+	@include break( 1680, min ){
+	}
 }
 
 
@@ -58,14 +73,20 @@ html{
 	right: 0;
 	left: 0;
 	padding-top: 10px;
+	padding-bottom: 10px;
 	line-height: 1;
 	text-align: center;
-	
+	transition: transition();
+
 
 	&__logo img{
 		max-width: 100px;
 	}
 
+}
+
+.-is-scrolling .siteHeader{
+	background-color: $blue;
 }
 
 
@@ -83,7 +104,7 @@ html{
 	padding-bottom: 30px;
 	line-height: 1;
 	color: #fff;
-	
+
 	.wrap{
 		display: flex;
 		justify-content: space-between;
@@ -99,9 +120,9 @@ html{
 	}
 
 	&__copy{
-		font-family: 'fontoposolid-regular', monoscape;
+		font-family: fontoposolid-regular, sans-serif;
 		font-size: 1rem;
-		
+
 		@include break( sp, min ){
 			font-size: small;
 		}
@@ -139,46 +160,46 @@ $margin: 20 / 690;
 	flex-wrap: wrap;
 	justify-content: space-between;
 	margin-bottom: percentage( -1  *$margin );
-	
+
 	.panel{
-		width: percentage( 0.5 - $margin/2);		
+		width: percentage( 0.5 - $margin/2);
 		margin-bottom: percentage( 1 * $margin);
-		
+
 		@include break( sp, min ){
-			width: percentage( 0.3333333 - $margin /1.25 );		
-		}	
+			width: percentage( 0.3333333 - $margin /1.25 );
+		}
 	}
-	
+
 	.panel:not( :nth-child( even ) ){
 		@include break( sp ){
 			margin-right: percentage( 1 * $margin );
-		}		
+		}
 	}
 
 	.panel:not( :nth-child( 3n ) ){
 		@include break( sp,min ){
 			margin-right: percentage( 1 * $margin );
-		}		
+		}
 
-	}	
-	
+	}
+
 }
 
 
 .panel{
 	display: flex;
-	
+
 	a{
 		color: $basefontColor;
 		transition: transition( all, 0.3s);
 	}
-	
+
 	a,
 	.panel__wrap{
 		width: 100%;
 		box-sizing: border-box;
 		padding-top: 10px;
-		padding-right: 30px;
+		padding-right: 20px;
 		padding-bottom: 10px;
 		padding-left: 10px;
 		position: relative;
@@ -187,18 +208,19 @@ $margin: 20 / 690;
 		border-radius: 3px;
 		background-color: #fff;
 		box-shadow: 0px 4.5px 5px rgba( $navy, 0.4 );
-		
+
 		@include break( sp, min ){
 			padding-top: 30px;
+			padding-right: 30px;
 			padding-bottom: 30px;
 			padding-left: 20px;
 		}
-		
+
 		@include iconfont(
 				$content: '\f105',
 				$dir: right
 			);
-			
+
 		&:after{
 			height: 1em;
 			margin-top: auto;
@@ -230,13 +252,13 @@ $margin: 20 / 690;
 		list-style: none;
 		font-size: 1.1rem;
 		color: #555;
-		
+
 		li{
 			line-height: 1.1;
 			margin-top: 5px;
 			margin-right: 10px;
 			display: inline-block;
-			
+
 			@include iconfont(
 				$content: '\f121'
 			);
@@ -261,7 +283,7 @@ $margin: 20 / 690;
 
 .button{
 	display: inline-block;
-	
+
 	&.-primary a{
 		background-color: $pink;
 	}
@@ -276,12 +298,12 @@ $margin: 20 / 690;
 		border-radius: 3px;
 		text-align: center;
 		color: #fff;
-		
+
 		@include iconfont(
 			$content: '\f101',
 			$dir: right
 		);
-		
+
 		&:after{
 			height: 1em;
 			margin-top: auto;
@@ -290,7 +312,7 @@ $margin: 20 / 690;
 			top: 0;
 			right: 10px;
 			bottom: 0;
-			
+
 		}
 
 	}
