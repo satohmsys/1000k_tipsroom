@@ -17,25 +17,6 @@ function getScrollVal( callback ){
 
 
 /**
-* device
-*/
-
-window.addEventListener("deviceorientation", function(e){
-
-	var x = Math.round( e.gamma || 0 ) * 0.25,
-			y = Math.round( e.beta || 0 ) * 0.25,
-			z = Math.round( e.alpha || 0 ) * 0.3;
-
-			$( 'body' ).append( x )
-
-		$bg.css({
-			'transform': 'translate3d(' + x + 'px ' + y + 'px ' + z + 'px )'
-		})
-
-});
-
-
-/**
 * スクロール値を取得する
 */
 $w.on( 'scroll load', function() {
