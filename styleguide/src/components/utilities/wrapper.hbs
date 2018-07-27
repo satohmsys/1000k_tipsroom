@@ -1,0 +1,32 @@
+<style>
+.wrap{
+	background-color: transparent;
+}
+	.wrap > .wrap,.inner{
+	padding:1em;
+	margin: 10px;
+	background-color: #fff;
+	}
+</style>
+
+<div class="wrap">
+<pre>
+.wrap{
+	width: 92%;
+	margin-left: auto;
+	margin-right: auto;	
+	
+	@include break( tab, min ){
+		max-width: 1000px;
+	}
+}
+</pre>
+</div>
+
+<div class="inner">
+<pre>
+.inner{
+	max-width: 768px
+}
+</pre>
+</div>
