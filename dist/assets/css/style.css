@@ -564,7 +564,7 @@ body
 
     width: 112%;
     margin: auto;
-    padding-top: 136.3095238095%;
+    padding-top: 136.30952%;
 
     opacity: .35;
     background: url(../img/bg.png) top center repeat-y;
@@ -655,7 +655,7 @@ body
     display: flex;
         flex-direction: row;
 
-    margin-bottom: -2.8985507246%; 
+    margin-bottom: -2.89855%; 
 
     -ms-flex-direction: row;
     -ms-flex-wrap: wrap;
@@ -665,28 +665,28 @@ body
 }
 .panels .panel
 {
-    width: 48.5507246377%;
-    margin-bottom: 2.8985507246%;
+    width: 48.55072%;
+    margin-bottom: 2.89855%;
 }
 @media screen and (min-width: 414px)
 {
     .panels .panel
     {
-        width: 31.0144894203%;
+        width: 31.01449%;
     }
 }
 @media screen and (max-width: 414px)
 {
     .panels .panel:not(:nth-child(even))
     {
-        margin-right: 2.8985507246%;
+        margin-right: 2.89855%;
     }
 }
 @media screen and (min-width: 414px)
 {
     .panels .panel:not(:nth-child(3n))
     {
-        margin-right: 2.8985507246%;
+        margin-right: 2.89855%;
     }
 }
 
@@ -715,6 +715,8 @@ body
     padding-right: 20px;
     padding-bottom: 10px;
     padding-left: 10px;
+
+    transition-timing-function: ease; 
 
     border-radius: 3px;
     background-color: #fff;
@@ -762,7 +764,8 @@ body
     -moz-osx-font-smoothing: grayscale;
 }
 html.ie8 .panel a:after,
-html.ie8 .panel .panel__wrap:after
+html.ie8
+    .panel .panel__wrap:after
 {
     font-family: inherit; 
 
@@ -787,10 +790,7 @@ html.ie8 .panel .panel__wrap:after
 .panel .panel__wrap:active,
 .panel .panel__wrap:focus
 {
-    bottom: -4px; 
-
-    background-color: #f8f8f8;
-    box-shadow: none;
+    background-color: #f0f0f0;
 }
 .panel__index
 {
