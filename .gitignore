@@ -1,3 +1,6 @@
 dev/.sass-cache/
 dev/node_modules/.bin/atob
 dev/node_modules/
+styleguide/build/themes/mandelbrot/fonts
+styleguide/build
+styleguide/node_modules
